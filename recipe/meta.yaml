@@ -11,7 +11,7 @@ source:
 
 build:
   number: 1
-  skip: True  # [py<36 or python_impl == 'pypy']
+  skip: True  # [py<36 or python_impl == 'pypy' or (aarch64 and py<38)]
   script: |
     # On MKL-supported platforms, we want to make the MKL kernel available
     {{ PYTHON }} build_mkl.py  # [x86_64]
