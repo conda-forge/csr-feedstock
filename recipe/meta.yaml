@@ -1,5 +1,5 @@
 {% set name = "csr" %}
-{% set version = "0.1.1" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 941242456064e5ea4c511e13babe842094deeaeb87ecb34fb870ba59b2665fc0
+  sha256: cb7eb801457cac234798b64f904a3e4ee6c8eb01a8ebef3736cd3f5e1f81481c
 
 build:
   number: 1
