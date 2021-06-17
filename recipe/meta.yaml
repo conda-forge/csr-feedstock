@@ -32,21 +32,21 @@ requirements:
     - python
     - pip
     - flit-core >=2
-    - cffi >=1.12.2   # [x86_64]
-    - mkl-devel =2020 # [x86_64]
+    - cffi >=1.12.2    # [x86_64]
+    - mkl-devel =2020  # [x86_64]
   run:
     - python
     - numba >=0.51
     - numpy >=1.17
     - scipy
-    - cffi >=1.12.2  # [x86_64]
+    - cffi >=1.12.2    # [x86_64]
 
 test:
   requires:
     - pytest
     - hypothesis
     - pytest-benchmark
-    - libblas=*=*mkl  # [x86_64]
+    - libblas=*=*mkl   # [x86_64]
   source_files:
     - pytest.ini
     - conftest.py
