@@ -1,5 +1,5 @@
 {% set name = "csr" %}
-{% set version = "0.3.1" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 97e7471a8fd783e058c76eab67916392587c4a34232e3638e973e964fa8f4359
+  sha256: 683cf39d02554f2c39a5202ac39e538b01febcbbf793a1cc89a64604d1d0b015
 
 build:
   number: 0
@@ -66,7 +66,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'Compressed sparse matrices for Python and Numba'
+  summary: Compressed sparse matrices for Python and Numba
   # The remaining entries in this section are optional, but recommended.
   description: |
     CSR is a compressed sparse row sparse matrix package for Python,
