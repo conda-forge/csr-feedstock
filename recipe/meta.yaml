@@ -31,7 +31,7 @@ requirements:
   host:
     - python
     - pip
-    - flit-core >=2
+    - flit-core >=3.2
     - cffi >=1.12.2    # [x86_64]
     - mkl-devel =2020  # [x86_64]
   run:
