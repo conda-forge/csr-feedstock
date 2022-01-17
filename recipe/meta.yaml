@@ -40,8 +40,6 @@ requirements:
     - numpy >=1.17
     - scipy
     - cffi >=1.12.2    # [x86_64]
-  run_constrained:
-    - mkl              # [win64]
 
 test:
   requires:
