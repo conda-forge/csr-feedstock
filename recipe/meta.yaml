@@ -10,7 +10,7 @@ source:
   sha256: 61128f621b306a8ccc7c0ce6ce61279a55d9bc3e30e9cd4c3bcd7dfd8fc9f557
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<37 or python_impl == 'pypy']
   script: |
     # On MKL-supported platforms, we want to make the MKL kernel available
@@ -33,8 +33,7 @@ requirements:
     - pip
     - flit-core >=3.2
     - cffi >=1.12.2    # [x86_64]
-    - mkl-devel =2020  # [x86_64 and not win]
-    - mkl-devel =2021  # [win64]
+    - mkl-devel        # [x86_64]
   run:
     - python
     - numba >=0.51
@@ -42,7 +41,7 @@ requirements:
     - scipy
     - cffi >=1.12.2    # [x86_64]
   run_constrained:
-    - mkl >=2021       # [win64]
+    - mkl              # [win64]
 
 test:
   requires:
