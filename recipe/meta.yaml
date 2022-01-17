@@ -1,5 +1,5 @@
 {% set name = "csr" %}
-{% set version = "0.4.0" %}
+{% set version = "0.4.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 683cf39d02554f2c39a5202ac39e538b01febcbbf793a1cc89a64604d1d0b015
+  sha256: 61128f621b306a8ccc7c0ce6ce61279a55d9bc3e30e9cd4c3bcd7dfd8fc9f557
 
 build:
   number: 0
-  skip: true  # [py<37 or python_impl == 'pypy' or (py>38 and arm64)]
+  skip: true  # [py<37 or python_impl == 'pypy']
   script: |
     # On MKL-supported platforms, we want to make the MKL kernel available
     {{ PYTHON }} build_mkl.py  # [x86_64]
@@ -25,21 +25,24 @@ requirements:
     - {{ compiler('c') }}  # [x86_64]
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - cython                                 # [build_platform != target_platform]
-    - numpy                                  # [build_platform != target_platform]
+    # - cython                                 # [build_platform != target_platform]
+    - numpy >=1.17                           # [build_platform != target_platform]
     - pybind11                               # [build_platform != target_platform]
   host:
     - python
     - pip
-    - flit-core >=2
+    - flit-core >=3.2
     - cffi >=1.12.2    # [x86_64]
-    - mkl-devel =2020  # [x86_64]
+    - mkl-devel =2020  # [x86_64 and not win]
+    - mkl-devel =2021  # [win64]
   run:
     - python
     - numba >=0.51
     - numpy >=1.17
     - scipy
     - cffi >=1.12.2    # [x86_64]
+  run_constrained:
+    - mkl >=2021       # [win64]
 
 test:
   requires:
