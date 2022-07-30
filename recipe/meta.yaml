@@ -13,6 +13,10 @@ build:
   number: 0
   skip: true  # [py<37 or python_impl == 'pypy']
   script: |
+    # silly hack to avoid import errors (will be fixed in later upstream)
+    mkdir lkbuild
+    touch lkbuild/__init__.py
+    touch lkbuild/tasks.py
     # On MKL-supported platforms, we want to make the MKL kernel available
     invoke build-mkl  # [x86_64]
     {{ PYTHON }} -m pip install --no-deps -vv .
