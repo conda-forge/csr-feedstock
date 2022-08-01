@@ -1,5 +1,5 @@
 {% set name = "csr" %}
-{% set version = "0.4.1" %}
+{% set version = "0.4.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 61128f621b306a8ccc7c0ce6ce61279a55d9bc3e30e9cd4c3bcd7dfd8fc9f557
+  sha256: a7d7e88de43a2fcfc10e13898d0e606956d8c7cc09a32ee27ae618a6645c5269
 
 build:
-  number: 3
+  number: 0
   skip: true  # [py<37 or python_impl == 'pypy']
   script: |
     # On MKL-supported platforms, we want to make the MKL kernel available
