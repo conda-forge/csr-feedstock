@@ -10,7 +10,7 @@ source:
   sha256: 0dd3a841e1c3047f3105ca7024166c35be8b2c92ae8948a88e1ebc5d420e84c4
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<38 or python_impl == 'pypy']
   script: |
     # On MKL-supported platforms, we want to make the MKL kernel available
