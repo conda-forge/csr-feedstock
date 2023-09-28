@@ -32,7 +32,7 @@ requirements:
     - python
     - pip
     - flit-core >=3.2
-    - invoke =1
+    - invoke =2
     - cffi >=1.12.2    # [x86_64]
     - mkl-devel        # [x86_64]
   run:
