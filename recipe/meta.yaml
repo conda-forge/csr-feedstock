@@ -23,6 +23,7 @@ requirements:
   build:
     # X86-64 needs the dependencies to build the MKL extension
     - {{ compiler('c') }}  # [x86_64]
+    - {{ stdlib('c') }}    # [x86_64]
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy >=1.11                           # [build_platform != target_platform]
